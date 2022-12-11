@@ -14,15 +14,14 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref } from 'vue';
 
-let isShow = ref(false)
-let count = ref(0)
-console.log(count)
+let isShow = ref(false);
+let count = ref(0);
+console.log(count);
 function clickTab() {
-  isShow.value = !isShow.value
+  isShow.value = !isShow.value;
 }
 </script>
 
-<style>
-</style>
+<style></style>
