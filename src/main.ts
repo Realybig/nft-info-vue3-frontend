@@ -7,11 +7,13 @@ import App from './App.vue';
 
 // 导入组件
 import Home from './components/Home.vue';
+import NFTList from './components/NFTList.vue';
 import About from './components/About.vue';
 
 // 定义路由
 const routes = [
   { path: '/', component: Home },
+  { path: '/huancang', component: NFTList },
   { path: '/about', component: About },
 ];
 

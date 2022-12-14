@@ -2,7 +2,7 @@
 
 ## 备忘
 
-Vue 3 Watch 使用方法
+### Vue 3 Watch 使用方法
 
 ```js
 // 导入 watch 模块
@@ -39,4 +39,20 @@ const data = reactive({
 watch( () => data.age.num , ( newValue, oldValue ) => {
   console.log( newValue, oldValue );
 }, { immediate: true });
+// immediate 进入页面立即开始监听
+```
+
+
+### Vue 3 watchEffect 使用方法
+
+```js
+import { watchEffect } from 'vue'
+
+// 进入页面后立即开始监听
+const res = watchEffect(() => {
+  cosole.log('watchEffect')
+})
+
+// 停止监听
+res()
 ```

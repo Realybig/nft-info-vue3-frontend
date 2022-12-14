@@ -6,9 +6,34 @@ import Footer from './components/Footer.vue';
 <template>
   <div>
     <Header></Header>
-    <router-view></router-view>
+    <div id="main">
+      <div class="main-wrap">
+        <router-view></router-view>
+      </div>
+    </div>
+
     <Footer></Footer>
   </div>
 </template>
 
-<style scoped></style>
+<style lang="scss">
+#app {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+#main {
+  position: absolute;
+  top: 0;
+  padding: 59px 0 0 0;
+  width: 100%;
+  height: calc(100vh - 59px);
+  z-index: 100;
+
+  .main-wrap {
+    padding: 20px;
+  }
+}
+</style>
