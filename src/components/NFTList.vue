@@ -1,26 +1,30 @@
 <template>
   <div>
-    <!-- 数据表格 -->
-    <el-table :data="tableData" stripe style="width: 100%">
-      <el-table-column prop="nftID" label="编号" width="180" />
-      <el-table-column prop="nftPic" label="图像" width="180" />
-      <el-table-column prop="nftName" label="名称" width="180" />
-      <el-table-column prop="nftQuantity" label="数量" width="180" />
-      <el-table-column prop="nftAttribute" label="属性" />
-      <el-table-column prop="nftSource" label="来源" />
-      <el-table-column prop="nftMaterials" label="合成材料" />
-      <el-table-column prop="activityNums" label="活动次数" />
-    </el-table>
+    <div class="nft-list">
+      <!-- 数据表格 -->
+      <el-table :data="tableData" stripe style="width: 100%">
+        <el-table-column prop="nftID" label="编号" width="180" />
+        <el-table-column prop="nftPic" label="图像" width="180" />
+        <el-table-column prop="nftName" label="名称" width="180" />
+        <el-table-column prop="nftQuantity" label="数量" width="180" />
+        <el-table-column prop="nftAttribute" label="属性" />
+        <el-table-column prop="nftSource" label="来源" />
+        <el-table-column prop="nftMaterials" label="合成材料" />
+        <el-table-column prop="activityNums" label="活动次数" />
+      </el-table>
+    </div>
 
     <!-- 分页栏 -->
-    <el-pagination
-      background
-      layout="prev, pager, next"
-      :total="1000"
-      :page-size="pageSize"
-      :current-page="curPage"
-      @current-change="curChange"
-    />
+    <div class="nft-list-page">
+      <el-pagination
+        background
+        layout="prev, pager, next"
+        :total="1000"
+        :page-size="pageSize"
+        :current-page="curPage"
+        @current-change="curChange"
+      />
+    </div>
   </div>
 </template>
 
@@ -71,4 +75,15 @@ const curChange = (val: number) => {
 };
 </script>
 
-<style></style>
+<style lang="scss">
+.nft-list {
+  margin-bottom: 40px;
+}
+.nft-list-page {
+  overflow: hidden;
+
+  & > div {
+    float: right;
+  }
+}
+</style>
