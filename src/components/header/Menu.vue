@@ -33,6 +33,7 @@
 
 <script setup lang="ts">
 import { toRefs } from 'vue';
+// 引入路由模块，但 elementUI plus 菜单有页面跳转功能，这里可以省略
 import { useRouter } from 'vue-router';
 const router = useRouter();
 
@@ -48,6 +49,7 @@ const props = defineProps<{ data: menuType }>();
 const { data } = toRefs(props);
 console.log(data);
 
+// 点击菜单
 function handleSelect(e: string) {
   console.log(e, data);
   // const currentMenu = data.find(item => {
